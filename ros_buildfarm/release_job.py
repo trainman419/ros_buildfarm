@@ -266,7 +266,7 @@ def _get_target_arches(build_file, os_name, os_code_name, print_skipped=True):
     arches = []
     for arch in build_file.targets[os_name][os_code_name]:
         # TODO support for non amd64 arch missing
-        if arch not in ['amd64']:
+        if arch not in ['amd64', 'armhf']:
             if print_skipped:
                 print('Skipping arch:', arch, file=sys.stderr)
             continue

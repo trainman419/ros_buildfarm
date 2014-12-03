@@ -65,9 +65,13 @@ def main(argv=sys.argv[1:]):
     debian_pkg_versions = get_binary_package_versions(
         apt_cache, debian_pkg_names)
 
+    os_name = args.os_name
+    if args.arch == 'armhf' and args.os_name == 'ubuntu':
+        os_name = 'mazzolino/armhf-ubuntu'
+
     # generate Dockerfile
     data = {
-        'os_name': args.os_name,
+        'os_name': os_name,
         'os_code_name': args.os_code_name,
 
         'maintainer_email': 'dthomas+buildfarm@osrfoundation.org',
