@@ -114,7 +114,7 @@
         '# -e=HOME= is required to set a reasonable HOME for the user (not /)',
         '# otherwise apt-src will fail',
         'docker run' +
-        ' -e=HOME=' +
+        ' -e=HOME=/home/buildfarm' +
         ' --net=host' +
         ' -v $WORKSPACE/ros_buildfarm:/tmp/ros_buildfarm:ro' +
         ' -v $WORKSPACE/binarydeb:/tmp/binarydeb' +
