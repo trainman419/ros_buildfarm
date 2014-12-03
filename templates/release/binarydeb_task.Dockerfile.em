@@ -5,6 +5,10 @@ MAINTAINER @maintainer_name @maintainer_email
 
 VOLUME ["/var/cache/apt/archives"]
 
+@[if arch == 'armhf']@
+ADD qemu-arm-static /usr/bin/qemu-arm-static
+@[end if]@
+
 ENV DEBIAN_FRONTEND noninteractive
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8

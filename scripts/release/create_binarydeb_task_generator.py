@@ -71,6 +71,7 @@ def main(argv=sys.argv[1:]):
 
     # generate Dockerfile
     data = {
+        'arch': args.arch,
         'os_name': os_name,
         'os_code_name': args.os_code_name,
 
